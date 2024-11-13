@@ -31,3 +31,30 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs y archivos temporales ###
+*.log
+*.tmp
+*.bak
+*.swp
+
+### Carpetas de caché ###
+/.mvn/
+/.gradle/
+
+### Archivos del sistema operativo ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.directory
+
+### Archivos empaquetados ###
+*.jar
+*.war
+*.ear
+
+### Carpetas de registro ###
+/logs/
