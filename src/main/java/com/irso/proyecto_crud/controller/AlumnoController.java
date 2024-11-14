@@ -28,6 +28,13 @@ public class AlumnoController {
         return "alumnos/list";
     }
 
+    @GetMapping("/create")
+    public String showCreateForm(Model model) {
+        model.addAttribute("alumno", new Alumno());
+        return "alumnos/form";
+    }
+
+
     @PostMapping("/save")
     public String saveAlumno(@ModelAttribute("alumno") Alumno alumno) {
         alumnoservice.save(alumno);
@@ -36,7 +43,7 @@ public class AlumnoController {
 
      @GetMapping("/delete/{id}")
     public String deleteAlumno(@PathVariable Long id) {
-        alumnoservice.deleteById(id);
+        alumnoservice.deleteByid(id);
         return "redirect:/alumnos";
     }
 
