@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para agregar o editar datos de un alumno en el sistema de gestión">
+    <title th:text="${alumno.id != null ? 'Editar Alumno' : 'Agregar Nuevo Alumno'}"></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 th:text="${alumno.id != null ? 'Editar Alumno' : 'Agregar Nuevo Alumno'}"></h1>
+        <nav>
+            <a href="/alumnos">Volver a la Lista</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form th:action="@{/alumnos/save}" th:object="${alumno}" method="post">
+                <fieldset>
+                    <legend>Información del Alumno</legend>
+                    <input type="hidden" th:field="*{id}"/>
+
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" th:field="*{lastName}" required/>
+
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" th:field="*{name}" required/>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" th:field="*{email}" required/>
+
+                    <label for="phoneNumber">Teléfono:</label>
+                    <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required/>
+
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" th:field="*{address}" required/>
+
+                    <label for="program">Programa:</label>
+                    <input type="text" id="program" th:field="*{program}" required/>
+
+                    <label for="active">Activo:</label>
+                    <input type="checkbox" id="active" th:field="*{active}"/>
+
+                    <label for="average">Promedio:</label>
+                    <input type="number" id="average" th:field="*{average}" step="0.01" required/>
+
+                    <div class="form-actions">
+                        <button type="submit">Guardar</button>
+                        <a href="/alumnos">Cancelar</a>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gestión de Alumnos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

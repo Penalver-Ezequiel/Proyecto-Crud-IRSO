@@ -31,6 +31,11 @@ public class Alumno {
     }
 
      
+    public Alumno() {
+        //TODO Auto-generated constructor stub
+    }
+
+
     public Long getId() {
         return id;
     }
