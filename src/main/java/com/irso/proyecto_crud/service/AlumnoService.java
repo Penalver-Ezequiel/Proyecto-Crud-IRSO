@@ -12,7 +12,7 @@ public class AlumnoService {
     @Autowired
     private AlumnoRepository alumnorepository;
 
-    public List<Alumno> getAllAlumnos(){
+    public List<Alumno> findAll(){
         return alumnorepository.findAll();
     }
 
