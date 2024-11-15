@@ -1,92 +1,100 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #004d7f;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --font-color: white;
+  --button-padding: 5px 10px;
+  --border-radius: 4px;
+  --table-hover: #f2f2f2;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    background-color: #004d7f;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  nav {
-    background-color: #007bff;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 15px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  .search-section {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .search-section input {
-    padding: 10px;
-    width: 300px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .table-section {
-    margin-top: 20px;
-    overflow-x: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-  }
-  
-  table th, table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  table th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  table tbody tr:hover {
-    background-color: #f2f2f2;
-  }
-  
-  footer {
-    background-color: #004d7f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header, footer {
+  background-color: var(--secondary-color);
+  color: var(--font-color);
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav {
+  background-color: var(--primary-color);
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+main {
+  padding: 20px;
+}
+
+.search-section input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+}
+
+.table-section {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+
+table tbody tr:hover {
+  background-color: var(--table-hover);
+}
+
+button {
+  padding: var(--button-padding);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--font-color);
+}
+
+/* Botones específicos */
+.btn-edit {
+  background-color: var(--success-color);
+}
+.btn-edit:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+}
+.btn-delete:hover {
+  background-color: #c82333;
+}

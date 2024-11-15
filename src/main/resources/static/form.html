@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario para agregar o editar datos de un alumno en el sistema de gestión">
     <title th:text="${alumno.id != null ? 'Editar Alumno' : 'Agregar Nuevo Alumno'}"></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleForm.css">
 </head>
 <body>
     <header>
@@ -20,22 +20,15 @@
             <form th:action="@{/alumnos/save}" th:object="${alumno}" method="post">
                 <fieldset>
                     <legend>Información del Alumno</legend>
-                    <input type="hidden" th:field="*{id}"/>
 
                     <label for="lastName">Apellido:</label>
                     <input type="text" id="lastName" th:field="*{lastName}" required/>
-
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" th:field="*{name}" required/>
 
                     <label for="email">Email:</label>
                     <input type="email" id="email" th:field="*{email}" required/>
 
                     <label for="phoneNumber">Teléfono:</label>
                     <input type="text" id="phoneNumber" th:field="*{phoneNumber}" required/>
-
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address" th:field="*{address}" required/>
 
                     <label for="program">Programa:</label>
                     <input type="text" id="program" th:field="*{program}" required/>

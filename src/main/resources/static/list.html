@@ -21,12 +21,10 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>Apellido</th>
-                    <th>Nombre</th>
                     <th>Email</th>
                     <th>Teléfono</th>
-                    <th>Dirección</th>
                     <th>Programa</th>
                     <th>Activo</th>
                     <th>Promedio</th>
@@ -37,16 +35,20 @@
                 <tr th:each="alumno : ${alumnos}">
                     <td th:text="${alumno.id}"></td>
                     <td th:text="${alumno.lastName}"></td>
-                    <td th:text="${alumno.name}"></td>
                     <td th:text="${alumno.email}"></td>
                     <td th:text="${alumno.phoneNumber}"></td>
-                    <td th:text="${alumno.address}"></td>
                     <td th:text="${alumno.program}"></td>
                     <td th:text="${alumno.active ? 'Sí' : 'No'}"></td>
                     <td th:text="${alumno.average}"></td>
                     <td>
-                        <a th:href="@{'/alumnos/edit/' + ${alumno.id}}">Editar</a> |
-                        <a th:href="@{'/alumnos/delete/' + ${alumno.id}}" onclick="return confirm('¿Estás seguro de que deseas eliminar este alumno?');">Eliminar</a>
+                        <form th:href="@{'/alumnos/edit/' + ${alumno.id}}" method="get" style="display: inline;">
+                         <button type="submit" class="btn-edit">Editar</button>
+                        </form>
+                        &nbsp;
+                        <form th:href="@{'/alumnos/delete/' + ${alumno.id}}" method="post" style="display: inline;"  
+                        onsubmit="return confirm('¿Estás seguro de que deseas eliminar este alumno?');">
+                        <button type="submit" class="btn-delete">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
