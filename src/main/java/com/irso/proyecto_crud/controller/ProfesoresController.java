@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.irso.proyecto_crud.entity.Profesor;
 import com.irso.proyecto_crud.services.ProfesorService;
@@ -30,8 +31,8 @@ public class ProfesoresController {
         return "profesores/form";
     }
 
-    @GetMapping("/nuevo")
-    public String nuevoProfesor(Profesor profesor) {
+    @PostMapping
+    public String guardaProfesor(Profesor profesor) {
         profesorService.guardar(profesor);
         return "redirect:/profesores/lista";
     }
