@@ -1,5 +1,10 @@
 # Aplicación Web de Gestión Institucional
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java Logo" width="100" height="100">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Spring Logo" width="100" height="100">
+</p>
+
 ## Introducción
 
 El Instituto Terciario XYZ requiere una solución web para la gestión de datos de alumnos, profesores, carreras y materias. Este proyecto implementa un sistema de gestión que cumple con los objetivos de registro, consulta, actualización y eliminación de datos, usando un Diseño claro y escalable.
@@ -44,6 +49,25 @@ El Instituto Terciario XYZ requiere una solución web para la gestión de datos 
 
 ### Estructura
 
+src/ 
+└── main/ 
+├── java/com/irso/proyecto_crud 
+│ ├── controller 
+│ ├── entity 
+│ ├── repository 
+│ ├── service 
+│ └── ProyectoCrudApplication.java 
+└── resources/ 
+├── static/ 
+├── templates/ 
+└── application.properties 
+└── test/ 
+├── java/com/irso/proyecto_crud 
+│ └── ProyectoCrudApplicationTests.java 
+├── Readme.md
+├── .gitignore
+└── pom.xml
+
 ### Componentes
 - **Modelo**: Define entidades y relaciones de la base de datos.
 - **Vista**: Plantillas HTML (Thymeleaf).
@@ -62,6 +86,32 @@ spring.datasource.password= *Tu contraseña*
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+```
+
+### Dependencias `pom.xml`
+
+- **Spring Boot Starter Web**
+- **Spring Boot Starter Thymeleaf**
+- **Spring Boot Starter Data JPA**
+- **MySQL Connector**
+- **Spring Boot Starter Test**
+- **Spring Boot DevTools**:
+
+---
+
+## Pruebas
+
+### Pruebas Unitarias
+
+- **Clases de prueba para los servicios usando JUnit.**
+
+### Pruebas de Integracion
+
+- **Verificación de endpoints con Postman.**
+
+## Conclusión
+
+Este proyecto está diseñado para ser modular, escalable y fácil de mantener. Gracias al patrón MVC, permite una separación clara de responsabilidades, asegurando una experiencia de desarrollo eficiente y adaptable.
 
 
-
+---
