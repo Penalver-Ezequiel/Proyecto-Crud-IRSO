@@ -48,7 +48,7 @@ El Instituto Terciario XYZ requiere una solución web para la gestión de datos 
 ## Arquitectura del Proyecto
 
 ### Estructura
-
+```estructura
 src/ 
 └── main/ 
 ├── java/com/irso/proyecto_crud 
@@ -64,11 +64,14 @@ src/
 └── test/ 
 ├── java/com/irso/proyecto_crud 
 │ └── ProyectoCrudApplicationTests.java 
-├── Readme.md
+├── README.md
 ├── .gitignore
 └── pom.xml
 
+```
+
 ### Componentes
+
 - **Modelo**: Define entidades y relaciones de la base de datos.
 - **Vista**: Plantillas HTML (Thymeleaf).
 - **Controlador**: Gestiona la lógica entre el modelo y la vista.
