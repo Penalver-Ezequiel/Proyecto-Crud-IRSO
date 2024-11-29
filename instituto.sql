@@ -24,12 +24,13 @@ DROP TABLE IF EXISTS `alumnos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `alumnos` (
   `id_alumno` bigint NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellido` varchar(100) DEFAULT NULL,
-  `mail` varchar(320) DEFAULT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `mail` varchar(320) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `id_carrera` bigint DEFAULT NULL,
   PRIMARY KEY (`id_alumno`),
+  UNIQUE KEY `telefono` (`telefono`),
   KEY `id_carrera` (`id_carrera`),
   CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`id_carrera`) REFERENCES `carreras` (`id_carrera`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -41,7 +42,6 @@ CREATE TABLE `alumnos` (
 
 LOCK TABLES `alumnos` WRITE;
 /*!40000 ALTER TABLE `alumnos` DISABLE KEYS */;
-INSERT INTO `alumnos` VALUES (1,'Javier ','juanfran','Javi@gmail.com','1123353532',3),(2,'Juan','Pérez','juan.perez@example.com','1234567890',4);
 /*!40000 ALTER TABLE `alumnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `materias`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `materias` (
   `id_materia` bigint NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,
   `id_carrera` bigint DEFAULT NULL,
   `id_profesor` bigint DEFAULT NULL,
   PRIMARY KEY (`id_materia`),
@@ -108,12 +108,13 @@ DROP TABLE IF EXISTS `profesores`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `profesores` (
   `id_profesor` bigint NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellido` varchar(100) DEFAULT NULL,
-  `mail` varchar(320) DEFAULT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `mail` varchar(100) NOT NULL,
   `telefono` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`id_profesor`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id_profesor`),
+  UNIQUE KEY `telefono` (`telefono`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,7 +123,6 @@ CREATE TABLE `profesores` (
 
 LOCK TABLES `profesores` WRITE;
 /*!40000 ALTER TABLE `profesores` DISABLE KEYS */;
-INSERT INTO `profesores` VALUES (1,'Javier ','Ratizalaga','Javi@gmail.com','1123353532');
 /*!40000 ALTER TABLE `profesores` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -135,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-21 22:20:41
+-- Dump completed on 2024-11-29 17:40:32
