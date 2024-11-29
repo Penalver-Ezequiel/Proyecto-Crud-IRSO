@@ -108,10 +108,6 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
 - **Clases de prueba para los servicios usando JUnit.**
 
-### Pruebas de Integracion
-
-- **Verificación de endpoints con Postman.**
-
 ## Conclusión
 
 Este proyecto está diseñado para ser modular, escalable y fácil de mantener. Gracias al patrón MVC, permite una separación clara de responsabilidades, asegurando una experiencia de desarrollo eficiente y adaptable.
